@@ -10,9 +10,6 @@ export default function Detail() {
       <Background>
         <img src="/images/backgrounds/background-Dororo.jpg" />
       </Background>
-      {/* <ImageTitle>
-        <img src="" />
-      </ImageTitle> */}
       <div style={{ fontSize: 90, fontFamily: "fantasy", color: " white" }}>
         Dororo
       </div>
@@ -32,7 +29,6 @@ export default function Detail() {
           <GroupIcon className="nav-icon" style={{ color: "#fff" }} />
         </GroupWatchButton>
       </Controls>
-      {/* <SubTitle></SubTitle> */}
       <Description>
         Dororo, a young orphan thief, meets Hyakkimaru, a powerful ronin.
         Hyakkimaru's father, a greedy feudal lord, had made a pact with 12
@@ -69,16 +65,6 @@ const Background = styled.div`
     object-fit: cover;
   }
 `;
-
-// const ImageTitle = styled.div`
-//   height: 30vh;
-
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: contain;
-//   }
-// `;
 
 const Controls = styled.div`
   display: flex;
@@ -146,5 +132,3 @@ const Description = styled.div`
   font-weight: 600;
   width: 30vw;
 `;
-
-// const SubTitle = styled(Description)``;

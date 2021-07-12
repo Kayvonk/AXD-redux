@@ -90,12 +90,3 @@ const Wrap = styled.div`
     }
   }
 `;
-
-// const Overlay = styled.div`
-//   position: relative;
-//   img {
-//     position: absolute;
-//     height: 100%;
-//     width: 100%;
-//   }
-// `;

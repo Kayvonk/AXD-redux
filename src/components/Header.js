@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
@@ -6,67 +6,40 @@ import AddIcon from "@material-ui/icons/Add";
 import StarIcon from "@material-ui/icons/Star";
 import TheatersIcon from "@material-ui/icons/Theaters";
 import TvIcon from "@material-ui/icons/Tv";
+import { useAuth } from "../Contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  selectUserName,
-  selectUserPhoto,
-  setUserLoginDetails,
-  setSignOutState,
-} from "../features/user/userSlice";
 
 export default function Header() {
-  const dispatch = useDispatch();
+  const { logout, currentUser } = useAuth();
+  const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const userName = useSelector(selectUserName);
-  const userPhoto = useSelector(selectUserPhoto);
 
-  useEffect(() => {
-    auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        setUser(user);
-        history.push("/home");
-      }
-    });
-  }, [userName]);
-
-  const handleAuth = () => {
-    if (!userName) {
-      auth
-        .signInWithPopup(provider)
-        .then((result) => {
-          setUser(result.user);
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    } else if (userName) {
-      auth
-        .signOut()
-        .then(() => {
-          dispatch(setSignOutState());
-          history.push("/");
-        })
-        .catch((err) => alert(err.message));
+  const handleLogin = () => {
+    try {
+      setLoading(true);
+      auth.signInWithPopup(provider);
+    } catch {
+      console.log("Falied to Login");
     }
+
+    setLoading(false);
   };
 
-  const setUser = (user) => {
-    dispatch(
-      setUserLoginDetails({
-        name: user.displayName,
-        email: user.email,
-        photo: user.photoURL,
-      })
-    );
-  };
+  async function handleLogout() {
+    try {
+      await logout();
+      history.push("/");
+    } catch {
+      console.log("Failed to logout");
+    }
+  }
 
   return (
     <Nav>
       <Logo src="/images/AXD.png" />
-      {!userName ? (
-        <Login onClick={handleAuth}>LOGIN</Login>
+      {!currentUser ? (
+        <Login onClick={handleLogin}>LOGIN</Login>
       ) : (
         <>
           <NavMenu>
@@ -96,9 +69,9 @@ export default function Header() {
             </a>
           </NavMenu>
           <SignOut>
-            <UserImg src={userPhoto} alt={userName} />
+            <UserImg src={currentUser.photoURL} />
             <DropDown>
-              <span onClick={handleAuth}>Sign out</span>
+              <span onClick={handleLogout}>Sign out</span>
             </DropDown>
           </SignOut>
         </>
@@ -146,7 +119,7 @@ const NavMenu = styled.div`
         right: 0;
         bottom: -6px;
         opacity: 0;
-        transform-origin: center;
+        transform-origin: left center;
         transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         transform: scaleX(0);
       }

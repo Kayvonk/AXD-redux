@@ -1,55 +1,40 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useAuth } from "../Contexts/AuthContext";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  selectUserName,
-  selectUserPhoto,
-  setUserLoginDetails,
-  setSignOutState,
-} from "../features/user/userSlice";
 
 export default function Login() {
-  const dispatch = useDispatch();
+  const { currentUser } = useAuth();
+  const [loading, setLoading] = useState(false);
   const history = useHistory();
-  const userName = useSelector(selectUserName);
+
+  const handleLogin = () => {
+    try {
+      setLoading(true);
+      auth.signInWithPopup(provider);
+    } catch {
+      console.log("Falied to Login");
+    }
+
+    setLoading(false);
+  };
 
   useEffect(() => {
-    auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        setUser(user);
+    const checkVerified = async () => {
+      if (currentUser) {
         history.push("/home");
+      } else {
+        auth.signOut();
       }
-    });
-  }, [userName]);
+    };
 
-  const handleAuth = () => {
-    if (!userName) {
-      auth
-        .signInWithPopup(provider)
-        .then((result) => {
-          setUser(result.user);
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    }
-  };
-
-  const setUser = (user) => {
-    dispatch(
-      setUserLoginDetails({
-        name: user.displayName,
-        email: user.email,
-        photo: user.photoURL,
-      })
-    );
-  };
+    checkVerified();
+  }, [currentUser]);
 
   return (
     <Container>
-      <Content onClick={handleAuth}>
+      <Content onClick={handleLogin}>
         <span>Sign Up</span>
       </Content>
     </Container>

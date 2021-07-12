@@ -2,9 +2,10 @@ import React from "react";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Detail from "./components/Detail";
 import Login from "./components/Login";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -12,18 +13,10 @@ function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/detail">
-            <Detail />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route path="/" exact>
-            <Login />
-          </Route>
+          <Route path="/" exact component={Login} />
+          <Route path="/login" component={Login} />
+          <PrivateRoute path="/home" component={Home} />
+          <PrivateRoute path="/detail" component={Detail} />
         </Switch>
       </Router>
     </div>
