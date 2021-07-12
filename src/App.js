@@ -14,9 +14,9 @@ function App() {
         <Header />
         <Switch>
           <Route path="/" exact component={Login} />
-          <Route path="/login" component={Login} />
-          <PrivateRoute path="/home" component={Home} />
-          <PrivateRoute path="/detail" component={Detail} />
+          <Route path="/login" exact component={Login} />
+          <PrivateRoute path="/home" exact component={Home} />
+          <PrivateRoute path="/detail" exact component={Detail} />
         </Switch>
       </Router>
     </div>
