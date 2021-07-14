@@ -37,11 +37,29 @@ export default function Header() {
 
   return (
     <Nav>
-      <Logo src="/images/AXD.png" />
       {!currentUser ? (
-        <Login onClick={handleLogin}>LOGIN</Login>
+        <>
+          <Logo src="/images/AXD.png" />
+          <Login onClick={handleLogin}>LOGIN</Login>
+        </>
       ) : (
         <>
+          <Menu>
+            <DropdownLogo src="/images/AXD.png" />
+            <DropDownMenu>
+              <h4>Home</h4>
+              <br />
+              <h4>Search</h4>
+              <br />
+              <h4>Watchlist</h4>
+              <br />
+              <h4>Originals</h4>
+              <br />
+              <h4>Movies</h4>
+              <br />
+              <h4>Series</h4>
+            </DropDownMenu>
+          </Menu>
           <NavMenu>
             <a>
               <HomeIcon className="nav-icon" style={{ color: "#fff" }} />
@@ -93,42 +111,92 @@ const Logo = styled.img`
   width: 60px;
 `;
 
-const NavMenu = styled.div`
+const DropdownLogo = styled(Logo)`
+  width: 60px;
+  position: relative;
+  cursor: pointer;
+`;
+
+const DropDownMenu = styled.div`
+  position: absolute;
+  top: 48px;
+  left: 0px;
+  background: rgb(34, 34, 34);
+  border: 1px solid rgba(151, 151, 151, 0.34);
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 18px 0px;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 3px;
+  width: 200px;
+  opacity: 0;
+`;
+
+const Menu = styled.div`
+  position: relative;
+  height: 60px;
+  width: 60px;
   display: flex;
-  flex: 1;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
 
-  a {
-    margin-left: 3rem;
-    display: flex;
-    align-items: center;
-    padding: 0 12px;
-    cursor: pointer;
-
-    span {
-      color: white;
-      letter-spacing: 1.4px;
-      position: relative;
-      margin-left: 5px;
-
-      &:after {
-        content: "";
-        background: #fff;
-        height: 2px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -6px;
-        opacity: 0;
-        transform-origin: left center;
-        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-        transform: scaleX(0);
-      }
+  ${DropdownLogo} {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    ${DropDownMenu} {
+      opacity: 1;
+      transition-duration: 1s;
+      z-index: 1;
     }
+  }
+`;
 
-    &:hover {
-      span:after {
-        transform: scaleX(1);
-        opacity: 1;
+const NavMenu = styled.div`
+  @media (max-width: 1200px) {
+    display: none;
+  }
+  @media (min-width: 1200px) {
+    display: flex;
+    flex: 1;
+
+    a {
+      margin-left: 3rem;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      cursor: pointer;
+
+      span {
+        color: white;
+        letter-spacing: 1.4px;
+        position: relative;
+        margin-left: 5px;
+
+        &:after {
+          content: "";
+          background: #fff;
+          height: 2px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -6px;
+          opacity: 0;
+          transform-origin: left center;
+          transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+          transform: scaleX(0);
+        }
+      }
+
+      &:hover {
+        span:after {
+          transform: scaleX(1);
+          opacity: 1;
+        }
       }
     }
   }
