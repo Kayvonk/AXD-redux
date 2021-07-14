@@ -6,12 +6,13 @@ import styled from "styled-components";
 
 export default function ImageSlider() {
   let settings = {
-    dots: true,
     infinite: true,
-    speed: 500,
+    arrows: false,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
+    autoplaySpeed: 7000,
   };
 
   return (
@@ -41,10 +42,6 @@ const Carousel = styled(Slider)`
 
   li.slick-active button:before {
     color: white;
-  }
-
-  .slick-list {
-    overflow: visible;
   }
 
   button {

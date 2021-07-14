@@ -1,9 +1,41 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Viewers() {
+  let settings = {
+    infinite: true,
+    arrows: false,
+    dots: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
-    <Container>
+    <Carousel {...settings}>
       <Wrap>
         <img src="/images/studioghibli.png" />
         <div>
@@ -34,16 +66,27 @@ export default function Viewers() {
           <img src="images/anime-bones.jpg"></img>
         </div>
       </Wrap>
-    </Container>
+    </Carousel>
   );
 }
 
-const Container = styled.div`
-  margin-top: 30px;
-  display: grid;
-  padding: 30px 0px 26px 26px;
-  grid-gap: 25px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+const Carousel = styled(Slider)`
+  padding-top: 20px;
+
+  ul li button {
+    &:before {
+      font-size: 10px;
+      color: #d2d2d2;
+    }
+  }
+
+  li.slick-active button:before {
+    color: white;
+  }
+
+  button {
+    z-index: 1;
+  }
 `;
 
 const Wrap = styled.div`
@@ -59,6 +102,8 @@ const Wrap = styled.div`
   overflow: hidden;
 
   img {
+    margin-left: auto;
+    margin-right: auto;
     width: 90%;
     height: 100%;
     z-index: 1;

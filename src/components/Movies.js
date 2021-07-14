@@ -1,12 +1,43 @@
 import React from "react";
 import styled from "styled-components";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function Movies() {
+  let settings = {
+    infinite: true,
+    arrows: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+
   return (
     <>
       <Container>
-        <h4> Recommended for You</h4>
-        <Content>
+        <h2> Recommended for You</h2>
+        <Carousel {...settings}>
           <Wrap>
             <img src="/images/thumbnails/Dororo.jpg" />
           </Wrap>
@@ -22,11 +53,9 @@ export default function Movies() {
           <Wrap>
             <img src="/images/thumbnails/CowboyBebop.png" />
           </Wrap>
-        </Content>
-      </Container>
-      <Container>
-        <h4>Action</h4>
-        <Content>
+        </Carousel>
+        <h2>Action</h2>
+        <Carousel {...settings}>
           <Wrap>
             <img src="/images/thumbnails/Yuu☆Yuu☆Hakusho.png" />
           </Wrap>
@@ -42,11 +71,9 @@ export default function Movies() {
           <Wrap>
             <img src="/images/thumbnails/Boku no Hero Academia 2.png" />
           </Wrap>
-        </Content>
-      </Container>
-      <Container>
-        <h4>Comedy</h4>
-        <Content>
+        </Carousel>
+        <h2>Comedy</h2>
+        <Carousel {...settings}>
           <Wrap>
             <img src="/images/thumbnails/Hinamatsuri.jpg" />
           </Wrap>
@@ -62,11 +89,9 @@ export default function Movies() {
           <Wrap>
             <img src="/images/thumbnails/Kono Subarashii Sekai ni Shukufuku wo! Kurenai Densetsu.png" />
           </Wrap>
-        </Content>
-      </Container>
-      <Container>
-        <h4>Sports</h4>
-        <Content>
+        </Carousel>
+        <h2>Sports</h2>
+        <Carousel {...settings}>
           <Wrap>
             <img src="/images/thumbnails/Haikyuu!! Sainou to Sense.png" />
           </Wrap>
@@ -82,27 +107,37 @@ export default function Movies() {
           <Wrap>
             <img src="/images/thumbnails/Megalo Box.jpg" />
           </Wrap>
-        </Content>
+        </Carousel>
       </Container>
     </>
   );
 }
 
-const Container = styled.div``;
-
-const Content = styled.div`
-  display: grid;
-  padding-bottom: 30px;
-  grid-gap: 25px;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+const Container = styled.div`
+  padding-bottom: 5rem;
+  h2 {
+    margin-top: 3rem;
+  }
 `;
 
-// const Column = styled(Content)`
-//   span {
-//     color: white;
-//     font-size: 16pt;
-//   }
-// `;
+const Carousel = styled(Slider)`
+  padding-top: 20px;
+
+  ul li button {
+    &:before {
+      font-size: 10px;
+      color: #d2d2d2;
+    }
+  }
+
+  li.slick-active button:before {
+    color: white;
+  }
+
+  button {
+    z-index: 1;
+  }
+`;
 
 const Wrap = styled.div`
   border: 3px solid rgba(249, 249, 249, 0.1);
@@ -114,6 +149,28 @@ const Wrap = styled.div`
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 360px) {
+    height: 315px;
+  }
+  @media (min-width: 360px) {
+    height: 315px;
+  }
+  @media (min-width: 425px) {
+    height: 248px;
+  }
+  @media (min-width: 576px) {
+    height: 345px;
+  }
+  @media (min-width: 992px) {
+    height: 405px;
+  }
+  @media (min-width: 1200px) {
+    height: 370px;
+  }
+  @media (min-width: 1400px) {
+    height: 455px;
+  }
 
   img {
     width: 100%;
