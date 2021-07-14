@@ -10,7 +10,7 @@ export default function Detail() {
       <Background>
         <img src="/images/backgrounds/background-Dororo.jpg" />
       </Background>
-      <div style={{ fontSize: 90, fontFamily: "fantasy", color: " white" }}>
+      <div style={{ fontSize: 90, fontFamily: "coolvetica", color: " white" }}>
         Dororo
       </div>
       <Controls>

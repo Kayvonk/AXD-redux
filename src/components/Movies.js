@@ -97,12 +97,12 @@ const Content = styled.div`
   grid-template-columns: repeat(5, minmax(0, 1fr));
 `;
 
-const Column = styled(Content)`
-  span {
-    color: white;
-    font-size: 16pt;
-  }
-`;
+// const Column = styled(Content)`
+//   span {
+//     color: white;
+//     font-size: 16pt;
+//   }
+// `;
 
 const Wrap = styled.div`
   border: 3px solid rgba(249, 249, 249, 0.1);

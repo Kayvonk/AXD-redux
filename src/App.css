@@ -11,6 +11,11 @@ h4 {
   src: local("Nethsans"), url(./fonts/nethsans.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "coolvetica rg";
+  src: local("coolvetica rg"), url(./fonts/coolveticarg.ttf) format("truetype");
+}
+
 body {
   overflow-x: hidden;
 }
