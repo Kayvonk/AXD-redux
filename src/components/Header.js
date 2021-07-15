@@ -39,7 +39,8 @@ export default function Header() {
     <Nav>
       {!currentUser ? (
         <>
-          <Logo src="/images/AXD.png" />
+          {/* <Logo src="/images/AXD.png" /> */}
+          <DropdownLogo src="/images/AXD.png" />
           <Login onClick={handleLogin}>LOGIN</Login>
         </>
       ) : (
