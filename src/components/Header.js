@@ -40,7 +40,22 @@ export default function Header() {
       {!currentUser ? (
         <>
           {/* <Logo src="/images/AXD.png" /> */}
-          <DropdownLogo src="/images/AXD.png" />
+          <Menu>
+            <DropdownLogo src="/images/AXD.png" />
+            <DropDownMenu>
+              <h4>Home</h4>
+              <br />
+              <h4>Search</h4>
+              <br />
+              <h4>Watchlist</h4>
+              <br />
+              <h4>Originals</h4>
+              <br />
+              <h4>Movies</h4>
+              <br />
+              <h4>Series</h4>
+            </DropDownMenu>
+          </Menu>
           <Login onClick={handleLogin}>LOGIN</Login>
         </>
       ) : (
