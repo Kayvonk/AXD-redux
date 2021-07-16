@@ -129,10 +129,10 @@ const DemoHomeHeader = (props) => {
           </DropDownMenu>
         </Menu>
         <NavMenu>
-          <a>
+          <Link to={`/home`}>
             <HomeIcon className="nav-icon" style={{ color: "#fff" }} />
             <span className="nav-text"> HOME </span>
-          </a>
+          </Link>
           <a>
             <SearchIcon className="nav-icon" style={{ color: "#fff" }} />
             <span className="nav-text"> SEARCH </span>

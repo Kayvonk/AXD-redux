@@ -114,7 +114,7 @@ const Background = styled.div`
     margin-left: 20vw;
     width: 100%;
     height: 100%;
-    /* object-fit: cover; */
+    object-fit: cover;
   }
 `;
 
