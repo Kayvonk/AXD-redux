@@ -129,7 +129,7 @@ const DemoHomeHeader = (props) => {
           </DropDownMenu>
         </Menu>
         <NavMenu>
-          <Link to={`/home`}>
+          <Link to={`/home`} style={{ textDecoration: "none" }}>
             <HomeIcon className="nav-icon" style={{ color: "#fff" }} />
             <span className="nav-text"> HOME </span>
           </Link>
