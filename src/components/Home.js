@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import ImageSlider from "./ImageSlider";
-import Movies from "./Movies";
 import Viewers from "./Viewers";
 import { useDispatch, useSelector } from "react-redux";
 import db from "../firebase";

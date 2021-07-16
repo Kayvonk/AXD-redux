@@ -47,8 +47,11 @@ const Sports = (props) => {
             movies.map((movie, key) => (
               <Wrap key={key}>
                 <Link to={`/detail/` + movie.id}>
-                  <img src={movie.cardImg} alt={movie.title} />
+                  <div className="ImgOverlay">
+                    <h5>{movie.title}</h5>
+                  </div>
                 </Link>
+                <img src={movie.cardImg} alt={movie.title} />
               </Wrap>
             ))}
         </Carousel>
@@ -85,6 +88,7 @@ const Carousel = styled(Slider)`
 `;
 
 const Wrap = styled.div`
+  position: relative;
   border: 3px solid rgba(249, 249, 249, 0.1);
   border-radius: 5px;
   cursor: pointer;
@@ -115,6 +119,38 @@ const Wrap = styled.div`
   }
   @media (min-width: 1400px) {
     height: 455px;
+  }
+
+  .ImgOverlay {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    font-size: 16pt;
+    transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    &:after {
+      content: "";
+      background: #000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.5;
+      transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+    }
+    &:hover {
+      opacity: 1;
+    }
+    h5 {
+      padding: 0 1rem;
+      color: white;
+      z-index: 2;
+    }
   }
 
   img {

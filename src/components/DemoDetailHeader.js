@@ -16,8 +16,9 @@ import {
   setSignOutState,
 } from "../features/user/userSlice";
 
-const DemoHomeHeader = (props) => {
+const DemoDetailHeader = (props) => {
   const defaultUserImage = "https://i.imgur.com/ScCwMk8.png";
+
   const dispatch = useDispatch();
   const history = useHistory();
   const userName = useSelector(selectUserName);
@@ -121,6 +122,8 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 0 1rem;
+  z-index: 1;
+  width: 100%;
 `;
 
 const Logo = styled.img`
@@ -156,7 +159,6 @@ const DropDownMenu = styled.div`
   letter-spacing: 3px;
   width: 200px;
   opacity: 0;
-
   ${NavWrap} {
     color: white;
   }
@@ -279,4 +281,4 @@ const SignOut = styled.div`
   }
 `;
 
-export default DemoHomeHeader;
+export default DemoDetailHeader;

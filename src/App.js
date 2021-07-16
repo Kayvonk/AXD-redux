@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/Header";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Detail from "./components/Detail";
 import Login from "./components/Login";
+// import Header from "./components/Header";
 
 function App() {
   return (

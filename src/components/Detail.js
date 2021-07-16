@@ -5,7 +5,7 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import AddIcon from "@material-ui/icons/Add";
 import GroupIcon from "@material-ui/icons/Group";
 import db from "../firebase";
-import DemoHomeHeader from "./DemoHomeHeader";
+import DemoDetailHeader from "./DemoDetailHeader";
 
 export default function Detail() {
   const { id } = useParams();
@@ -29,35 +29,40 @@ export default function Detail() {
 
   return (
     <>
-      <DemoHomeHeader />
+      <DemoDetailHeader />
       <Container>
         <Wrap>
           <Background>
             <img alt={detailData.title} src={detailData.backgroundImg} />
             <Overlay />
-            {/* <img src="/images/backgrounds/background-Dororo.jpg" /> */}
           </Background>
+          <HeaderBackground />
         </Wrap>
-        <Title
-          style={{ fontSize: 90, fontFamily: "coolvetica", color: " white" }}
-        >
+        <Title style={{ fontFamily: "coolvetica", color: " white" }}>
           {detailData.title}
         </Title>
         <Controls>
-          <PlayButton>
-            <PlayArrowIcon className="nav-icon" style={{ color: "#222222" }} />
-            <span>PLAY</span>
-          </PlayButton>
-          <TrailerButton>
-            <PlayArrowIcon className="nav-icon" style={{ color: "#fff" }} />
-            <span>TRAILER</span>
-          </TrailerButton>
-          <AddButton>
-            <AddIcon className="nav-icon" style={{ color: "#fff" }} />
-          </AddButton>
-          <GroupWatchButton>
-            <GroupIcon className="nav-icon" style={{ color: "#fff" }} />
-          </GroupWatchButton>
+          <ControlWrap>
+            <PlayButton>
+              <PlayArrowIcon
+                className="nav-icon"
+                style={{ color: "#222222" }}
+              />
+              <span>PLAY</span>
+            </PlayButton>
+            <TrailerButton>
+              <PlayArrowIcon className="nav-icon" style={{ color: "#fff" }} />
+              <span>TRAILER</span>
+            </TrailerButton>
+          </ControlWrap>
+          <ControlWrap2>
+            <AddButton>
+              <AddIcon className="nav-icon" style={{ color: "#fff" }} />
+            </AddButton>
+            <GroupWatchButton>
+              <GroupIcon className="nav-icon" style={{ color: "#fff" }} />
+            </GroupWatchButton>
+          </ControlWrap2>
         </Controls>
         <Details>
           <SubTitle>{detailData.subTitle}</SubTitle>
@@ -85,20 +90,58 @@ const Wrap = styled.div`
   position: relative;
 `;
 
-const Overlay = styled.div`
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 1) 36%,
-    rgba(0, 0, 0, 0) 37%
-  );
+const ControlWrap = styled.div`
+  @media (min-width: 576px) {
+    display: flex;
+  }
+`;
 
+const ControlWrap2 = styled.div`
+  display: flex;
+  @media (max-width: 576px) {
+    padding-top: 2rem;
+  }
+`;
+
+const Overlay = styled.div`
+  @media (max-width: 576px) {
+    background: linear-gradient(
+      90deg,
+      rgba(22, 22, 22, 1) 0%,
+      rgba(22, 22, 22, 1) 40%,
+      rgba(0, 0, 0, 0) 40%
+    );
+  }
+  @media (min-width: 576px) {
+    background: linear-gradient(
+      90deg,
+      rgba(22, 22, 22, 1) 0%,
+      rgba(22, 22, 22, 1) 36%,
+      rgba(0, 0, 0, 0) 36%
+    );
+  }
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 0;
+`;
+
+const HeaderBackground = styled.div`
+  background: linear-gradient(
+    180deg,
+    rgba(22, 22, 22, 1) 0%,
+    rgba(22, 22, 22, 1) 8%,
+    rgba(0, 0, 0, 0) 8%
+  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 1;
 `;
 
 const Background = styled.div`
@@ -108,19 +151,22 @@ const Background = styled.div`
   right: 0;
   bottom: 0;
   z-index: -2;
-  opacity: 0.8;
+  opacity: 1;
 
   img {
-    margin-left: 20vw;
-    width: 100%;
+    margin-left: 25vw;
+    margin-top: 50px;
+    width: 90%;
     height: 100%;
     object-fit: cover;
   }
 `;
 
 const Controls = styled.div`
-  display: flex;
   align-items: center;
+  @media (min-width: 576px) {
+    display: flex;
+  }
 `;
 
 const PlayButton = styled.div`
@@ -144,6 +190,9 @@ const PlayButton = styled.div`
 `;
 
 const TrailerButton = styled(PlayButton)`
+  @media (max-width: 576px) {
+    margin-top: 2rem;
+  }
   background: rgb(0, 0, 0, 0.3);
   border: 1px solid rgb(249, 249, 249);
 
@@ -183,11 +232,73 @@ const Description = styled.div`
   font-size: 20px;
   font-weight: 600;
   width: 30vw;
+  @media (max-width: 360px) {
+    font-size: 7pt;
+  }
+  @media (min-width: 360px) {
+    font-size: 7pt;
+  }
+  @media (min-width: 410px) {
+    font-size: 7pt;
+  }
+  @media (min-width: 576px) {
+    font-size: 9pt;
+  }
+  @media (min-width: 768px) {
+    font-size: 11pt;
+  }
+  @media (min-width: 992px) {
+    font-size: 13pt;
+  }
+  @media (min-width: 1200px) {
+    font-size: 14pt;
+  }
 `;
 
 const Title = styled.div`
-  width: 30vw;
+  width: 40vw;
   padding-bottom: 2rem;
+
+  @media (max-width: 360px) {
+    font-size: 16pt;
+  }
+  @media (min-width: 360px) {
+    font-size: 20pt;
+  }
+  @media (min-width: 410px) {
+    font-size: 30pt;
+  }
+  @media (min-width: 576px) {
+    font-size: 30pt;
+  }
+  @media (min-width: 768px) {
+    font-size: 40pt;
+  }
+  @media (min-width: 992px) {
+    font-size: 55pt;
+  }
 `;
 
-const SubTitle = styled(Description)``;
+const SubTitle = styled(Description)`
+  @media (max-width: 360px) {
+    font-size: 7pt;
+  }
+  @media (min-width: 360px) {
+    font-size: 7pt;
+  }
+  @media (min-width: 410px) {
+    font-size: 7pt;
+  }
+  @media (min-width: 576px) {
+    font-size: 9pt;
+  }
+  @media (min-width: 768px) {
+    font-size: 11pt;
+  }
+  @media (min-width: 992px) {
+    font-size: 13pt;
+  }
+  @media (min-width: 1200px) {
+    font-size: 14pt;
+  }
+`;

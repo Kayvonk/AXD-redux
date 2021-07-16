@@ -6,9 +6,7 @@ import AddIcon from "@material-ui/icons/Add";
 import StarIcon from "@material-ui/icons/Star";
 import TheatersIcon from "@material-ui/icons/Theaters";
 import TvIcon from "@material-ui/icons/Tv";
-// import { useAuth } from "../Contexts/AuthContext";
 import { Link } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
@@ -20,24 +18,10 @@ import {
 } from "../features/user/userSlice";
 
 const Header = (props) => {
-  // const { currentUser } = useAuth();
-  // const [loading, setLoading] = useState(false);
-  // const history = useHistory();
-
   const dispatch = useDispatch();
   const history = useHistory();
   const userName = useSelector(selectUserName);
   const userPhoto = useSelector(selectUserPhoto);
-
-  // useEffect(() => {
-  //   auth.onAuthStateChanged(async (user) => {
-  //     if (user) {
-  //       setUser(user);
-  //       history.push("/home");
-  //     }
-  //   });
-  // }, [userName]);
-
   const handleAuth = () => {
     if (!userName) {
       auth
@@ -69,65 +53,11 @@ const Header = (props) => {
     );
   };
 
-  // const handleLogin = () => {
-  //   try {
-  //     setLoading(true);
-  //     auth.signInWithPopup(provider);
-  //   } catch {
-  //     console.log("Falied to Login");
-  //   }
-
-  //   setLoading(false);
-  // };
-
-  // async function handleLogout() {
-  //   try {
-  //     await logout();
-  //     history.push("/");
-  //   } catch {
-  //     console.log("Failed to logout");
-  //   }
-
   return (
     <Nav>
       {!userName ? (
         <>
-          {/* <Logo src="/images/AXD.png" /> */}
-          <Menu>
-            <DropdownLogo src="/images/AXD.png" />
-            <DropDownMenu>
-              <NavWrap className="nav-wrap">
-                <Link to={`/home`} style={{ textDecoration: "none" }}>
-                  <h4>Home</h4>
-                </Link>
-              </NavWrap>
-              <NavWrap className="nav-wrap">
-                <Link to={`/home`} style={{ textDecoration: "none" }}>
-                  <h4>Search</h4>
-                </Link>
-              </NavWrap>
-              <NavWrap className="nav-wrap">
-                <Link to={`/home`} style={{ textDecoration: "none" }}>
-                  <h4>Watchlist</h4>
-                </Link>
-              </NavWrap>
-              <NavWrap className="nav-wrap">
-                <Link to={`/home`} style={{ textDecoration: "none" }}>
-                  <h4>Originals</h4>
-                </Link>
-              </NavWrap>
-              <NavWrap className="nav-wrap">
-                <Link to={`/home`} style={{ textDecoration: "none" }}>
-                  <h4>Movies</h4>
-                </Link>
-              </NavWrap>
-              <NavWrap className="nav-wrap">
-                <Link to={`/home`} style={{ textDecoration: "none" }}>
-                  <h4>Series</h4>
-                </Link>
-              </NavWrap>
-            </DropDownMenu>
-          </Menu>
+          <Logo src="/images/AXD.png" />
           <Login onClick={handleAuth}>LOGIN</Login>
         </>
       ) : (
@@ -168,10 +98,10 @@ const Header = (props) => {
             </DropDownMenu>
           </Menu>
           <NavMenu>
-            <a>
+            <Link to={`/home`} style={{ textDecoration: "none" }}>
               <HomeIcon className="nav-icon" style={{ color: "#fff" }} />
               <span className="nav-text"> HOME </span>
-            </a>
+            </Link>
             <a>
               <SearchIcon className="nav-icon" style={{ color: "#fff" }} />
               <span className="nav-text"> SEARCH </span>
@@ -182,7 +112,7 @@ const Header = (props) => {
             </a>
             <a>
               <StarIcon className="nav-icon" style={{ color: "#fff" }} />
-              <span className="nav-text"> ORIGINALS </span>
+              <span className="nav-text"> FAVORITES </span>
             </a>
             <a>
               <TheatersIcon className="nav-icon" style={{ color: "#fff" }} />
@@ -204,7 +134,6 @@ const Header = (props) => {
     </Nav>
   );
 };
-
 const Nav = styled.nav`
   height: 70px;
   background: #222222;
@@ -216,6 +145,20 @@ const Nav = styled.nav`
 
 const Logo = styled.img`
   width: 60px;
+`;
+
+const Login = styled.a`
+  background-color: hsl(0, 0%, 13.3%);
+  cursor: pointer;
+  color: #fff;
+  padding: 8px 16px;
+  letter-spacing: 1.5px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+  &:hover {
+    background-color: hsl(0, 0%, 23.3%);
+  }
 `;
 
 const DropdownLogo = styled(Logo)`
@@ -242,7 +185,7 @@ const DropDownMenu = styled.div`
   border: 1px solid rgba(151, 151, 151, 0.34);
   border-radius: 4px;
   box-shadow: rgb(0 0 0 / 50%) 0px 0px 18px 0px;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
   letter-spacing: 3px;
   width: 200px;
@@ -328,20 +271,6 @@ const UserImg = styled.img`
   height: 55px;
   border-radius: 50%;
   cursor: pointer;
-`;
-
-const Login = styled.a`
-  background-color: hsl(0, 0%, 13.3%);
-  cursor: pointer;
-  color: #fff;
-  padding: 8px 16px;
-  letter-spacing: 1.5px;
-  border: 1px solid #f9f9f9;
-  border-radius: 4px;
-  transition: all 0.2s ease 0s;
-  &:hover {
-    background-color: hsl(0, 0%, 23.3%);
-  }
 `;
 
 const DropDown = styled.div`

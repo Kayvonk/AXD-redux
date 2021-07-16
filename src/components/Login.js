@@ -13,9 +13,21 @@ import DemoLoginHeader from "./DemoLoginHeader";
 
 export default function Login() {
   const dispatch = useDispatch();
-
   const history = useHistory();
   const userName = useSelector(selectUserName);
+  const userPhoto = useSelector(selectUserPhoto);
+  const handleAuth = () => {
+    if (!userName) {
+      auth
+        .signInWithPopup(provider)
+        .then((result) => {
+          setUser(result.user);
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    }
+  };
 
   const setUser = (user) => {
     dispatch(
@@ -41,7 +53,7 @@ export default function Login() {
       <DemoLoginHeader />
       <Container>
         <Content>
-          <span>Sign Up</span>
+          <span onClick={handleAuth}>Sign Up</span>
         </Content>
       </Container>
     </>
