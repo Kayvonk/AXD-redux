@@ -11,6 +11,7 @@ import Recommend from "./Recommend";
 import Action from "./Action";
 import Comedy from "./Comedy";
 import Sports from "./Sports";
+import DemoHomeHeader from "./DemoHomeHeader";
 
 const Home = (props) => {
   const dispatch = useDispatch();
@@ -57,6 +58,7 @@ const Home = (props) => {
 
   return (
     <div>
+      <DemoHomeHeader />
       <Container>
         <ImageSlider />
         <Viewers />

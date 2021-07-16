@@ -5,6 +5,7 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import AddIcon from "@material-ui/icons/Add";
 import GroupIcon from "@material-ui/icons/Group";
 import db from "../firebase";
+import DemoHomeHeader from "./DemoHomeHeader";
 
 export default function Detail() {
   const { id } = useParams();
@@ -27,43 +28,46 @@ export default function Detail() {
   }, [id]);
 
   return (
-    <Container>
-      <Wrap>
-        <Background>
-          <img alt={detailData.title} src={detailData.backgroundImg} />
-          <Overlay />
-          {/* <img src="/images/backgrounds/background-Dororo.jpg" /> */}
-        </Background>
-      </Wrap>
-      <Title
-        style={{ fontSize: 90, fontFamily: "coolvetica", color: " white" }}
-      >
-        {detailData.title}
-      </Title>
-      <Controls>
-        <PlayButton>
-          <PlayArrowIcon className="nav-icon" style={{ color: "#222222" }} />
-          <span>PLAY</span>
-        </PlayButton>
-        <TrailerButton>
-          <PlayArrowIcon className="nav-icon" style={{ color: "#fff" }} />
-          <span>TRAILER</span>
-        </TrailerButton>
-        <AddButton>
-          <AddIcon className="nav-icon" style={{ color: "#fff" }} />
-        </AddButton>
-        <GroupWatchButton>
-          <GroupIcon className="nav-icon" style={{ color: "#fff" }} />
-        </GroupWatchButton>
-      </Controls>
-      <Details>
-        <SubTitle>{detailData.subTitle}</SubTitle>
-        <SubTitle>{detailData.length}</SubTitle>
-        <Description>{detailData.description}</Description>
-        <Description>{detailData.description2}</Description>
-        <Description>{detailData.description3}</Description>
-      </Details>
-    </Container>
+    <>
+      <DemoHomeHeader />
+      <Container>
+        <Wrap>
+          <Background>
+            <img alt={detailData.title} src={detailData.backgroundImg} />
+            <Overlay />
+            {/* <img src="/images/backgrounds/background-Dororo.jpg" /> */}
+          </Background>
+        </Wrap>
+        <Title
+          style={{ fontSize: 90, fontFamily: "coolvetica", color: " white" }}
+        >
+          {detailData.title}
+        </Title>
+        <Controls>
+          <PlayButton>
+            <PlayArrowIcon className="nav-icon" style={{ color: "#222222" }} />
+            <span>PLAY</span>
+          </PlayButton>
+          <TrailerButton>
+            <PlayArrowIcon className="nav-icon" style={{ color: "#fff" }} />
+            <span>TRAILER</span>
+          </TrailerButton>
+          <AddButton>
+            <AddIcon className="nav-icon" style={{ color: "#fff" }} />
+          </AddButton>
+          <GroupWatchButton>
+            <GroupIcon className="nav-icon" style={{ color: "#fff" }} />
+          </GroupWatchButton>
+        </Controls>
+        <Details>
+          <SubTitle>{detailData.subTitle}</SubTitle>
+          <SubTitle>{detailData.length}</SubTitle>
+          <Description>{detailData.description}</Description>
+          <Description>{detailData.description2}</Description>
+          <Description>{detailData.description3}</Description>
+        </Details>
+      </Container>
+    </>
   );
 }
 

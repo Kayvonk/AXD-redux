@@ -9,6 +9,7 @@ import {
   setUserLoginDetails,
   setSignOutState,
 } from "../features/user/userSlice";
+import DemoLoginHeader from "./DemoLoginHeader";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -36,11 +37,14 @@ export default function Login() {
   }, [userName]);
 
   return (
-    <Container>
-      <Content>
-        <span>Sign Up</span>
-      </Content>
-    </Container>
+    <>
+      <DemoLoginHeader />
+      <Container>
+        <Content>
+          <span>Sign Up</span>
+        </Content>
+      </Container>
+    </>
   );
 }
 
