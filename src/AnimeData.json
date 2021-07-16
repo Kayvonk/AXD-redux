@@ -1,0 +1,224 @@
+{
+    "movies": {
+        "1": {
+            "backgroundImg": "/images/backgrounds/background-Dororo.jpg",
+            "cardImg": "/images/thumbnails/Dororo.jpg",
+            "description": "Dororo, a young orphan thief, meets Hyakkimaru, a powerful ronin. Hyakkimaru's father, a greedy feudal lord, had made a pact with 12 demons, offering his yet-unborn son's body parts in exchange for great power. Thus, Hyakkimaru - who was born without arms, legs, eyes, ears, a nose or a mouth - was abandoned in a river as a baby. Rescued and raised by Dr. Honma, who equips him with artificial limbs and teaches him sword-fighting techniques, Hyakkimaru discovers that each time he slays a demon, a piece of his body is restored. Now, he roams the war-torn countryside in search of demons.",
+            "description2":"",
+            "description3":"",
+            "subTitle": "2019 • Action, Adventure, Demons, Historical, Samurai, Shounen, Supernatural",
+            "length":"Episodes: 24",
+            "title": "Dororo",
+            "type": "recommend"
+                   },
+        "2": {
+            "backgroundImg": "/images/backgrounds/background-SteinsGate.jpg",
+            "cardImg": "/images/thumbnails/Steins;Gate.jpg",
+            "description": "Self-proclaimed mad scientist Okabe Rintarou lives in a small room in Akihabara, where he invents 'future gadgets' with fellow lab members Shiina Mayuri, his air-headed childhood friend, and Hashida Itaru, an otaku hacker. The three pass the time by tinkering with their latest creation, a 'Phone Microwave' that can be controlled through text messages.",
+             "description2":"The lab members soon face a string of mysterious incidents that lead to a game-changing discovery: the Phone Microwave can send emails to the past and thus alter history. Adapted from the critically acclaimed visual novel by 5pb. and Nitroplus, Steins;Gate takes Okabe to the depths of scientific theory and human despair as he faces the dire consequences of changing the past.",
+            "description3":"",
+            "subTitle": "2011 • Sci-Fi, Psychological, Drama, Thriller",
+         "length":"Episodes: 24",
+            "title": "Steins;Gate",
+            "type": "recommend"
+        },
+        "3": {
+            "backgroundImg": "/images/backgrounds/background-MushishiZokuShou2.jpg",
+            "cardImg": "/images/thumbnails/MushishiZokuShou2.jpg",
+            "description": "Ghostly, primordial beings known as Mushi continue to cause mysterious changes in the lives of humans. The travelling Mushishi, Ginko, persists in trying to set right the strange and unsettling situations he encounters. Time loops, living shadows, and telepathy are among the overt effects of interference from Mushi, but more subtle symptoms that take years to be noticed also rouse Ginko's concern as he passes from village to village.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2014 • Adventure, Fantasy, Historical, Mystery, Seinen, Slice of Life, Supernatural",
+           "length":"Episodes: 10",
+            "title": "Mushishi ZokuShou 2",
+            "type": "recommend"
+        },
+        "4": {
+            "backgroundImg": "/images/backgrounds/background-Akira.png",
+            "cardImg": "/images/thumbnails/Akira.jpg",
+            "description": "It's the year 2019, thirty-one years have passed since the start of World War III. A top-secret child with amazing powers of the mind breaks free from custody and accidentally gets a motorcycle gang involved in the project. This incident triggers psychic powers within one of the gang members, Tetsuo, and he is taken by the army to be experimented on. His mind has been altered and is now on the path of war, seeking revenge on the society that once called him weak.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "1988 • Action, Military, Sci-Fi, Adventure, Horror, Supernatural, Seinen",
+              "length":"Duration: 2 hr. 4 min.",
+            "title": "Akira",
+            "type": "recommend"
+        },
+        "5": {
+            "backgroundImg": "/images/backgrounds/background-CowboyBebop.jpg",
+            "cardImg": "/images/thumbnails/CowboyBebop.png",
+            "description": "Enter a world in the distant future, where Bounty Hunters roam the solar system. Spike and Jet, bounty hunting partners, set out on journeys in an ever struggling effort to win bounty rewards to survive.",
+             "description2":"While traveling, they meet up with other very interesting people. Could Faye, the beautiful and ridiculously poor gambler, Edward, the computer genius, and Ein, the engineered dog be a good addition to the group?",
+            "description3":"",
+            "subTitle": "1998 • Action, Adventure, Comedy, Drama, Sci-Fi, Space",
+               "length":"Episodes: 26",
+            "title": "Cowboy Bebop",
+            "type": "recommend"
+        },
+        "6": {
+            "backgroundImg": "/images/backgrounds/background-YuuYuuHakusho.jpg",
+            "cardImg": "/images/thumbnails/Yuu☆Yuu☆Hakusho.png",
+            "description": "Urameshi Yusuke, 14 years of age, is about as troublesome and violent as teenagers come. He is constantly ditching school, causing trouble, and getting into numerous fights everyday. One day however, he does the unexpected, sacrificing himself to save a young child. Such an action, was never ever expected, especially coming from someone as troublesome as Urameshi Yusuke. The afterlife is not prepared for Yusuke, as they never thought he would make such a sacrifice. Nowhere to go, and dead, Yusuke becomes a ghost and must earn his way back into existence.",
+             "description2":"Yusuke is 'employed' by Koenma, who is in charge while his father and ruler of the afterlife, King Enma, is away. Under Koenma's command, Yusuke helps to stop menacing demons that threaten the lives of people everywhere; whether by stealing priceless and invaluable items and destructive weapons, or by wreaking havoc on humans everywhere.",
+            "description3":"Throughout Yusuke's journey, he is usually joined by; his arch-rival, and local bully, Kuwabara Kazuma. He is also joined by two demons named Hiei and Kurama, whom are ex-convicts of the afterlife that managed to escape from Koenma.",
+            "subTitle": "1992 • Action, Comedy, Demons, Supernatural, Martial Arts, Shounen",
+         "length":"Episodes: 26",
+            "title": "Yuu☆Yuu☆Hakusho",
+            "type": "action"
+        },
+        "7": {
+            "backgroundImg": "/images/backgrounds/background-ShingekinoKyojinGaidenKuinakiSentaku.jpg",
+            "cardImg": "/images/thumbnails/Shingeki no Kyojin Gaiden Kuinaki Sentaku.png",
+            "description": "This prequel to megahit Attack on Titan answers the questions: How did Captain Levi of the Survey Corps go from street tough to humanity's strongest soldier? And how did Commander Erwin become a cold, calculating leader, ready to sacrifice anything to save the human race? The fires that forged this bond of loyalty and trust were intense indeed!",
+            "description2":"",
+            "description3":"",
+            "subTitle": "2014 • Action, Fantasy, Shoujo",
+         "length":"Episodes: 2",
+            "title": "Shingeki no Kyojin Gaiden Kuinaki Sentaku",
+            "type": "action"
+        },
+        "8": {
+            "backgroundImg": "/images/backgrounds/background-FateZero.jpg",
+            "cardImg": "/images/thumbnails/FateZero.png",
+            "description": "With the promise of granting any wish, the omnipotent Holy Grail triggered three wars in the past, each too cruel and fierce to leave a victor. In spite of that, the wealthy Einzbern family is confident that the Fourth Holy Grail War will be different; namely, with a vessel of the Holy Grail now in their grasp. Solely for this reason, the much hated 'Magus Killer' Kiritsugu Emiya is hired by the Einzberns, with marriage to their only daughter Irisviel as binding contract.",
+             "description2":"Kiritsugu now stands at the center of a cutthroat game of survival, facing off against six other participants, each armed with an ancient familiar, and fueled by unique desires and ideals. Accompanied by his own familiar, Saber, the notorious mercenary soon finds his greatest opponent in Kirei Kotomine, a priest who seeks salvation from the emptiness within himself in pursuit of Kiritsugu.",
+            "description3":"Based on the light novel written by Gen Urobuchi, Fate/Zero depicts the events of the Fourth Holy Grail War—10 years prior to Fate/stay night. Witness a battle royale in which no one is guaranteed to survive.",
+            "subTitle": "2011 • Action, Supernatural, Magic, Fantasy",
+              "length":"Episodes: 13",
+            "title": "Fate Zero",
+            "type": "action"
+        },
+        "9": {
+            "backgroundImg": "/images/backgrounds/background-NarutoShippuuden.jpg",
+            "cardImg": "/images/thumbnails/Naruto Shippuuden.png",
+            "description": "Naruto: Shippuuden is the continuation of the original animated TV series Naruto. The story revolves around an older and slightly more matured Uzumaki Naruto and his quest to save his friend Uchiha Sasuke from the grips of the snake-like Shinobi, Orochimaru. After 2 and a half years Naruto finally returns to his village of Konoha, and sets about putting his ambitions to work, though it will not be easy, as he has amassed a few (more dangerous) enemies, in the likes of the shinobi organization; Akatsuki.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2007 • Action, Adventure, Comedy, Super Power, Martial Arts, Shounen",
+              "length":"Episodes: 500",
+            "title": "Naruto Shippuuden",
+            "type": "action"
+        },
+        "10": {
+            "backgroundImg": "/images/backgrounds/background-BokunoHeroAcademia2.jpg",
+            "cardImg": "/images/thumbnails/Boku no Hero Academia 2.png",
+            "description": "Taking off right after the last episode of the first season. The school is temporarily closed due to security. When U.A. restarts, it is announced that the highly anticipated School Sports Festival will soon be taking place. All classes: Hero, Support, General and Business will be participating. Tournaments all round will decide who is the top Hero in training.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2017 • Action, Comedy, Super Power, School, Shounen",
+              "length":"Episodes: 25",
+            "title": "Boku no Hero Academia 2",
+            "type": "action"
+        },
+        "11": {
+            "backgroundImg": "/images/backgrounds/background-Hinamatsuri.jpg",
+            "cardImg": "/images/thumbnails/Hinamatsuri.jpg",
+            "description": "The comedy manga centers around a super-powered girl named Hina and Nitta, a young member of the yakuza. Hina suddenly appears in Nitta's room and threatens him with her extraordinary powers. However, they end up living together.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2018 • Sci-Fi, Slice of Life, Comedy, Supernatural, Seinen",
+              "length":"Episodes: 12",
+            "title": "Hinamatsuri",
+            "type": "comedy"
+        },
+        "12": {
+            "backgroundImg": "/images/backgrounds/background-AnsatsuKyoushitsu2.png",
+            "cardImg": "/images/thumbnails/Ansatsu Kyoushitsu 2.jpg",
+            "description": "The students return as school is back in session for the second semester. Following their exploits on the island during summer vacation, Class 3-E continues to sharpen their blades with their sights set on their teacher, the slippery Koro-sensei. They have more to worry about than just their teacher, however, as enemy assassins, both old and new, are out for the increased bounty on the octopus' head.",
+             "description2":"Moreover, their rivals in Class A, as well as Kunugigaoka Junior High's fearsome principal, stand to block Class E from achieving academic excellence. With all of these obstacles opposing them, the group must continue to work together in order to overcome their foes and accomplish their goal of successfully assassinating their teacher.",
+            "description3":"",
+            "subTitle": "2016 • Action, Comedy, School, Shounen",
+              "length":"Episodes: 25",
+            "title": "Ansatsu Kyoushitsu 2",
+            "type": "comedy"
+        },
+        "13": {
+            "backgroundImg": "/images/backgrounds/background-ChuunibyoudemoKoigaShitai!.webp",
+            "cardImg": "/images/thumbnails/Chuunibyou demo Koi ga Shitai!.jpg",
+            "description": "Everybody has had that stage in their life where they have thought themselves to be special, different from the masses of ordinary humans. They might go as far as seeing themselves capable of wielding mystical powers, or maybe even believe themselves to have descended from a fantasy realm. This 'disease' is known as 'chuunibyou' and is often the source of some of the most embarrassing moments of a person's life.",
+            "description2":"For Yuuta Togashi, the scars that his chuunibyou has left behind are still fresh. Having posed as the 'Dark Flame Master' during his middle school years, he looks back at those times with extreme embarrassment, so much so that he decides to attend a high school far away where nobody will recognize him. Putting his dark history behind him, he longs to live a normal high school life.",
+            "description3":"Unfortunately, he hasn't escaped his past yet: enter Rikka Takanashi, Yuuta's new classmate and self-declared vessel of the 'Wicked Eye. As this eccentric young girl crashes into Yuuta's life, his dream of an ordinary, chuunibyou-free life quickly crumbles away. In this hilarious and heartwarming story of a boy who just wants to leave his embarrassing memories behind, the delusions of old are far from a thing of the past.",
+            "subTitle": "2018 • 7m • Slice of Life, Comedy, Drama, Romance, School",
+              "length":"Episodes: 12",
+            "title": "Chuunibyou demo Koi ga Shitai!",
+            "type": "comedy"
+        },
+        "14": {
+            "backgroundImg": "/images/backgrounds/background-SaikiKusuonoΨ-nan.jpg",
+            "cardImg": "/images/thumbnails/Saiki Kusuo no Ψ-nan.png",
+            "description": "To the average person, psychic abilities might seem a blessing; for Kusuo Saiki, however, this couldn't be further from the truth. Gifted with a wide assortment of supernatural abilities ranging from telepathy to x-ray vision, he finds this so-called blessing to be nothing but a curse. As all the inconveniences his powers cause constantly pile up, all Kusuo aims for is an ordinary, hassle-free life—a life where ignorance is bliss.",
+             "description2":"Unfortunately, the life of a psychic is far from quiet. Though Kusuo tries to stay out of the spotlight by keeping his powers a secret from his classmates, he ends up inadvertently attracting the attention of many odd characters, such as the empty-headed Riki Nendou and the delusional Shun Kaidou. Forced to deal with the craziness of the people around him, Kusuo comes to learn that the ordinary life he has been striving for is a lot more difficult to achieve than expected.",
+            "description3":"",
+            "subTitle": "2016 • Comedy, School, Shounen, Slice of Life, Supernatural",
+              "length":"Episodes: 120",
+            "title": "Saiki Kusuo no Ψ-nan",
+            "type": "comedy"
+        },
+        "15": {
+            "backgroundImg": "/images/backgrounds/background-Kono Subarashii SekainiShukufukuwo!KurenaiDensetsu.png",
+            "cardImg": "/images/thumbnails/Kono Subarashii Sekai ni Shukufuku wo! Kurenai Densetsu.png",
+            "description": "A video game-loving shut-in, Satou Kazuma's life should've ended when he was hit by a truck, but through a twist of fate, he ends up reincarnating in another world--and dragging the troublemaking goddess, Aqua, the wildly dorky mage, Megumin, and the unrelentingly delusional lady knight, Darkness, with him.",
+             "description2":"Now, the Crimson Demon village that Megumin and Yunyun are from is facing a threat that could mean its ending. Kazuma and his gang follow Yunyun, who returns to the Crimson Demon village intent on saving it... when they are faced with their greatest threat yet! What will become of the unremarkable adventurer Kazuma's life in another world?!",
+            "description3":"",
+            "subTitle": "2019 • Adventure, Comedy, Parody, Supernatural, Magic, Fantasy",
+              "length":"Duration: 1 hr. 30 min.",
+            "title": "Kono Subarashii Sekai ni Shukufuku wo! Kurenai Densetsu",
+            "type": "comedy"
+        },
+        "16": {
+            "backgroundImg": "/images/backgrounds/background-Haikyuu!!SainoutoSense.jpg",
+            "cardImg": "/images/thumbnails/Haikyuu!! Sainou to Sense.png",
+            "description": "A compilation film depicting the match against Aoba Johsai High School in the second season of the anime series. It will also include new scenes portraying what happened after the match.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2017 • Comedy, Drama, School, Shounen, Sports",
+              "length":"Duration: 1 hr. 29 min.",
+            "title": "Haikyuu!! Sainou to Sense",
+            "type": "sports"
+        },
+        "17": {
+            "backgroundImg": "/images/backgrounds/background-KurokonoBasketSaikounoPresentDesu.jpg",
+            "cardImg": "/images/thumbnails/Kuroko no Basket Saikou no Present Desu.jpg",
+            "description": "A few weeks after the Winter Cup, the five players of the Generation of Miracles as well as Kuroko have settled back into everyday life. But an invitation from Momoi arrives, proposing that the former Teikou Junior High players gather once again and play a game.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2015 • Action, School, Shounen, Sports",
+              "length":"Episodes: 1",
+            "title": "Kuroko no Basket Saikou no Present Desu",
+            "type": "sports"
+        },
+        "18": {
+            "backgroundImg": "/images/backgrounds/background-SlamDunk.jpg",
+            "cardImg": "/images/thumbnails/Slam Dunk.jpg",
+            "description": "Hanamichi Sakuragi, an entering Shohoku high school freshman holds a record for being rejected by 50 girls during middle school. His nearly 2 meters height and bright red hair causes most students to write him off as a delinquent.",
+             "description2":"One day, a girl named Haruko Akagi approaches Hanamichi without any fear. When she asks Hanamichi: 'do you like basketball?' Hanamichi falls head over heels for the girl of his dreams. Without missing a beat, Hanamichi tells her he loves basketball, and the two head to the gymnasium where Hanamichi learns about the slam dunk. He also learns of Rukawa, one of the country’s top basketball prospects, also a freshman at Shohoku.",
+            "description3":"",
+            "subTitle": "1993 • Comedy, Drama, School, Shounen, Sports",
+              "length":"Episodes: 101",
+            "title": "Slam Dunk",
+            "type": "sports"
+        },
+        "19": {
+            "backgroundImg": "/images/backgrounds/background-Yuri!!!onICE.jpg",
+            "cardImg": "/images/thumbnails/Yuri!!! on ICE.png",
+            "description": "The show's story revolves around Yūri Katsuki, who carried all of Japan's hopes on his shoulders to win at the Gran Prix Finale ice skating competition, but suffered a crushing defeat. He returns home to Kyushu and half feels like he wants to retire, and half feels like he wants to continue ice skating. With those mixed feelings swirling inside him, he confines himself inside his parents house. Suddenly the five-time consecutive world championship ice skater Victor Nikiforov appears before him, and along with him is Yuri Plisetsky, a young Russian figure skater who is already defeating his seniors. Victor and both Yuris take up the challenge on an unprecedented Gran Prix series.",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2016 • Comedy, Sports",
+              "length":"Episodes: 12",
+            "title": "Yuri!!! on ICE",
+            "type": "sports"
+        },
+        "20": {
+            "backgroundImg": "/images/backgrounds/background-MegaloBox.webp",
+            "cardImg": "/images/thumbnails/Megalo Box.jpg",
+            "description": "'To be quiet and do as you're told, that's the cowardly choice.' These are the words of Junk Dog, an underground fighter of Megalo Box, an evolution of boxing that utilizes mechanical limbs known as Gear to enhance the speed and power of its users. Despite the young man's brimming potential as a boxer, the illegal nature of his participation forces him to make a living off of throwing matches as dictated by his boss Gansaku Nanbu. However, this all changes when the Megalo Box champion Yuuri enters his shabby ring under the guise of just another challenger. Taken out in a single round, Junk Dog is left with a challenge: 'If you're serious about fighting me again, then fight your way up to me and my ring.'",
+             "description2":"",
+            "description3":"",
+            "subTitle": "2018 • Action, Sci-Fi, Sports, Drama",
+              "length":"Episodes: 13",
+            "title": "Megalo Box",
+            "type": "sports"
+        }
+    }
+}

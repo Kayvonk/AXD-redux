@@ -1,40 +1,43 @@
 import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useAuth } from "../Contexts/AuthContext";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
+import {
+  selectUserName,
+  selectUserPhoto,
+  setUserLoginDetails,
+  setSignOutState,
+} from "../features/user/userSlice";
 
 export default function Login() {
-  const { currentUser } = useAuth();
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
   const history = useHistory();
+  const userName = useSelector(selectUserName);
 
-  const handleLogin = () => {
-    try {
-      setLoading(true);
-      auth.signInWithPopup(provider);
-    } catch {
-      console.log("Falied to Login");
-    }
-
-    setLoading(false);
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
   };
 
   useEffect(() => {
-    const checkVerified = async () => {
-      if (currentUser) {
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        setUser(user);
         history.push("/home");
-      } else {
-        auth.signOut();
       }
-    };
-
-    checkVerified();
-  }, [currentUser]);
+    });
+  }, [userName]);
 
   return (
     <Container>
-      <Content onClick={handleLogin}>
+      <Content>
         <span>Sign Up</span>
       </Content>
     </Container>

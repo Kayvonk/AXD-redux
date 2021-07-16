@@ -6,6 +6,10 @@ h2 {
   color: hsl(0, 0%, 80%);
 }
 
+h4 {
+  color: white;
+}
+
 @font-face {
   font-family: "Nethsans";
   src: local("Nethsans"), url(./fonts/nethsans.ttf) format("truetype");

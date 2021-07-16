@@ -1,18 +1,45 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import AddIcon from "@material-ui/icons/Add";
 import GroupIcon from "@material-ui/icons/Group";
+import db from "../firebase";
 
 export default function Detail() {
+  const { id } = useParams();
+  const [detailData, setDetailData] = useState({});
+
+  useEffect(() => {
+    db.collection("movies")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setDetailData(doc.data());
+        } else {
+          console.log("no such document in firebase 🔥");
+        }
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
+  }, [id]);
+
   return (
     <Container>
-      <Background>
-        <img src="/images/backgrounds/background-Dororo.jpg" />
-      </Background>
-      <div style={{ fontSize: 90, fontFamily: "coolvetica", color: " white" }}>
-        Dororo
-      </div>
+      <Wrap>
+        <Background>
+          <img alt={detailData.title} src={detailData.backgroundImg} />
+          <Overlay />
+          {/* <img src="/images/backgrounds/background-Dororo.jpg" /> */}
+        </Background>
+      </Wrap>
+      <Title
+        style={{ fontSize: 90, fontFamily: "coolvetica", color: " white" }}
+      >
+        {detailData.title}
+      </Title>
       <Controls>
         <PlayButton>
           <PlayArrowIcon className="nav-icon" style={{ color: "#222222" }} />
@@ -29,17 +56,13 @@ export default function Detail() {
           <GroupIcon className="nav-icon" style={{ color: "#fff" }} />
         </GroupWatchButton>
       </Controls>
-      <Description>
-        Dororo, a young orphan thief, meets Hyakkimaru, a powerful ronin.
-        Hyakkimaru's father, a greedy feudal lord, had made a pact with 12
-        demons, offering his yet-unborn son's body parts in exchange for great
-        power. Thus, Hyakkimaru - who was born without arms, legs, eyes, ears, a
-        nose or a mouth - was abandoned in a river as a baby. Rescued and raised
-        by Dr. Honma, who equips him with artificial limbs and teaches him
-        sword-fighting techniques, Hyakkimaru discovers that each time he slays
-        a demon, a piece of his body is restored. Now, he roams the war-torn
-        countryside in search of demons.
-      </Description>
+      <Details>
+        <SubTitle>{detailData.subTitle}</SubTitle>
+        <SubTitle>{detailData.length}</SubTitle>
+        <Description>{detailData.description}</Description>
+        <Description>{detailData.description2}</Description>
+        <Description>{detailData.description3}</Description>
+      </Details>
     </Container>
   );
 }
@@ -50,19 +73,44 @@ const Container = styled.div`
   position: relative;
 `;
 
+const Details = styled.div`
+  padding: 2rem 0;
+`;
+
+const Wrap = styled.div`
+  position: relative;
+`;
+
+const Overlay = styled.div`
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) 36%,
+    rgba(0, 0, 0, 0) 37%
+  );
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+`;
+
 const Background = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  z-index: -2;
   opacity: 0.8;
 
   img {
+    margin-left: 20vw;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    /* object-fit: cover; */
   }
 `;
 
@@ -132,3 +180,10 @@ const Description = styled.div`
   font-weight: 600;
   width: 30vw;
 `;
+
+const Title = styled.div`
+  width: 30vw;
+  padding-bottom: 2rem;
+`;
+
+const SubTitle = styled(Description)``;

@@ -6,7 +6,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Movies() {
   let settings = {
-    infinite: true,
     arrows: false,
     speed: 500,
     slidesToShow: 4,

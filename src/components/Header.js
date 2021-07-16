@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import HomeIcon from "@material-ui/icons/Home";
 import SearchIcon from "@material-ui/icons/Search";
@@ -6,74 +6,165 @@ import AddIcon from "@material-ui/icons/Add";
 import StarIcon from "@material-ui/icons/Star";
 import TheatersIcon from "@material-ui/icons/Theaters";
 import TvIcon from "@material-ui/icons/Tv";
-import { useAuth } from "../Contexts/AuthContext";
+// import { useAuth } from "../Contexts/AuthContext";
+import { Link } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
+import {
+  selectUserName,
+  selectUserPhoto,
+  setUserLoginDetails,
+  setSignOutState,
+} from "../features/user/userSlice";
 
-export default function Header() {
-  const { logout, currentUser } = useAuth();
-  const [loading, setLoading] = useState(false);
+const Header = (props) => {
+  // const { currentUser } = useAuth();
+  // const [loading, setLoading] = useState(false);
+  // const history = useHistory();
+
+  const dispatch = useDispatch();
   const history = useHistory();
+  const userName = useSelector(selectUserName);
+  const userPhoto = useSelector(selectUserPhoto);
 
-  const handleLogin = () => {
-    try {
-      setLoading(true);
-      auth.signInWithPopup(provider);
-    } catch {
-      console.log("Falied to Login");
+  // useEffect(() => {
+  //   auth.onAuthStateChanged(async (user) => {
+  //     if (user) {
+  //       setUser(user);
+  //       history.push("/home");
+  //     }
+  //   });
+  // }, [userName]);
+
+  const handleAuth = () => {
+    if (!userName) {
+      auth
+        .signInWithPopup(provider)
+        .then((result) => {
+          setUser(result.user);
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    } else if (userName) {
+      auth
+        .signOut()
+        .then(() => {
+          dispatch(setSignOutState());
+          history.push("/");
+        })
+        .catch((err) => alert(err.message));
     }
-
-    setLoading(false);
   };
 
-  async function handleLogout() {
-    try {
-      await logout();
-      history.push("/");
-    } catch {
-      console.log("Failed to logout");
-    }
-  }
+  const setUser = (user) => {
+    dispatch(
+      setUserLoginDetails({
+        name: user.displayName,
+        email: user.email,
+        photo: user.photoURL,
+      })
+    );
+  };
+
+  // const handleLogin = () => {
+  //   try {
+  //     setLoading(true);
+  //     auth.signInWithPopup(provider);
+  //   } catch {
+  //     console.log("Falied to Login");
+  //   }
+
+  //   setLoading(false);
+  // };
+
+  // async function handleLogout() {
+  //   try {
+  //     await logout();
+  //     history.push("/");
+  //   } catch {
+  //     console.log("Failed to logout");
+  //   }
 
   return (
     <Nav>
-      {!currentUser ? (
+      {!userName ? (
         <>
           {/* <Logo src="/images/AXD.png" /> */}
           <Menu>
             <DropdownLogo src="/images/AXD.png" />
             <DropDownMenu>
-              <h4>Home</h4>
-              <br />
-              <h4>Search</h4>
-              <br />
-              <h4>Watchlist</h4>
-              <br />
-              <h4>Originals</h4>
-              <br />
-              <h4>Movies</h4>
-              <br />
-              <h4>Series</h4>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Home</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Search</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Watchlist</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Originals</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Movies</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Series</h4>
+                </Link>
+              </NavWrap>
             </DropDownMenu>
           </Menu>
-          <Login onClick={handleLogin}>LOGIN</Login>
+          <Login onClick={handleAuth}>LOGIN</Login>
         </>
       ) : (
         <>
           <Menu>
             <DropdownLogo src="/images/AXD.png" />
             <DropDownMenu>
-              <h4>Home</h4>
-              <br />
-              <h4>Search</h4>
-              <br />
-              <h4>Watchlist</h4>
-              <br />
-              <h4>Originals</h4>
-              <br />
-              <h4>Movies</h4>
-              <br />
-              <h4>Series</h4>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Home</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Search</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Watchlist</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Originals</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Movies</h4>
+                </Link>
+              </NavWrap>
+              <NavWrap className="nav-wrap">
+                <Link to={`/home`} style={{ textDecoration: "none" }}>
+                  <h4>Series</h4>
+                </Link>
+              </NavWrap>
             </DropDownMenu>
           </Menu>
           <NavMenu>
@@ -103,16 +194,16 @@ export default function Header() {
             </a>
           </NavMenu>
           <SignOut>
-            <UserImg src={currentUser.photoURL} />
+            <UserImg src={userPhoto} />
             <DropDown>
-              <span onClick={handleLogout}>Sign out</span>
+              <span onClick={handleAuth}>Sign out</span>
             </DropDown>
           </SignOut>
         </>
       )}
     </Nav>
   );
-}
+};
 
 const Nav = styled.nav`
   height: 70px;
@@ -133,6 +224,16 @@ const DropdownLogo = styled(Logo)`
   cursor: pointer;
 `;
 
+const NavWrap = styled.div`
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: hsl(0, 0%, 23.3%);
+  }
+`;
+
 const DropDownMenu = styled.div`
   position: absolute;
   top: 48px;
@@ -146,6 +247,10 @@ const DropDownMenu = styled.div`
   letter-spacing: 3px;
   width: 200px;
   opacity: 0;
+
+  ${NavWrap} {
+    color: white;
+  }
 `;
 
 const Menu = styled.div`
@@ -278,3 +383,5 @@ const SignOut = styled.div`
     }
   }
 `;
+
+export default Header;

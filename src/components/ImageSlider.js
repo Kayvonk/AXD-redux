@@ -9,6 +9,7 @@ export default function ImageSlider() {
     infinite: true,
     arrows: false,
     speed: 1000,
+    draggable: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
