@@ -11,23 +11,21 @@
 
 ## Description
 
-This application uses react with firebase to create a simulated video streaming service where users can browse their favorite movies and shows.
+This application uses react with redux and firebase (authentication and firestore) to create a simulated video streaming service where users can browse their favorite movies and shows.
 
 ## Usage
 
-To utilize this application, run npm start in your terminal or command prompt. Similarly, the deployed application can be run from the following links. Don't want to log in? No worries, just click on the additional links to navigate the pages without logging in.
+To utilize this application, run npm start in your terminal or command prompt. Similarly, the deployed application can be run from the following links. Don't want to log in? No worries, just click 'DEMO' on the top right to get to the dashboard without logging in. From there, clicking on a show will take you to its details page. You can navigate back to the dashboard by clicking 'HOME', clicking the logo on the top left, or using the dropdown from the logo.
 
-Deployed application: https://axd.netlify.app/
+Deployed application: https://arxd.netlify.app/
 
-(Dashboard Page) https://axd.netlify.app/home
+(Dashboard Page) https://arxd.netlify.app/home
 
-(Details Page) https://axd.netlify.app/detail
+![ardxloginthumbnail](./public/images/ardxloginthumbnail.PNG)
 
-![axdloginthumbnail](./public/images/axdloginthumbnail.PNG)
+![ardxhomethumbnail](./public/images/ardxhomethumbnail.PNG)
 
-![axdhomethumbnail](./public/images/axdhomethumbnail.PNG)
-
-![axddetailthumbnail](./public/images/axddetailthumbnail.PNG)
+![ardxdetailthumbnail](./public/images/ardxdetailthumbnail.PNG)
 
 ## License
 
