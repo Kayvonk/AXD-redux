@@ -17,9 +17,9 @@ This application uses react with redux and firebase (authentication and firestor
 
 To utilize this application, run npm start in your terminal or command prompt. Similarly, the deployed application can be run from the following links. Don't want to log in? No worries, just click 'DEMO' on the top right to get to the dashboard without logging in. From there, clicking on a show will take you to its details page. You can navigate back to the dashboard by clicking 'HOME', clicking the logo on the top left, or using the dropdown from the logo.
 
-Deployed application: https://arxd.netlify.app/
+Deployed application: https://ardx.netlify.app/
 
-(Dashboard Page) https://arxd.netlify.app/home
+(Dashboard Page) https://ardx.netlify.app/home
 
 ![ardxloginthumbnail](./public/images/ardxloginthumbnail.PNG)
 
